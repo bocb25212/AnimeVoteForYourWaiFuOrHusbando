@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+
+  
+<!-- 定义文件解释器（文件上传） -->  
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">    
+    <!-- 设置默认编码 -->  
+    <property name="defaultEncoding" value="utf-8"></property>  
+    <!-- 上传图片最大大小1M-->   
+    <property name="maxUploadSize" value="1048576"></property>    
+</bean>
+	
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.Sean.controller">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+     <context:component-scan base-package="com.Sean.LoginController">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    <context:component-scan base-package="com.Sean.RegisterController">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    <context:component-scan base-package="com.Sean.AnimeCharacterController">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    <context:component-scan base-package="com.Sean.TopicController">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    <context:component-scan base-package="com.Sean.ReplyController">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    <context:component-scan base-package="com.Sean.MainController">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+
+
+    <mvc:annotation-driven />
+    
+    <mvc:default-servlet-handler />
+
+
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    
+    
+    <!--拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--/**可以拦截路径不管有多少层-->
+            <mvc:mapping path="/**"/>
+            <bean class="com.Sean.LoginController.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+<mvc:resources location="/upload/" mapping="/upload/**"/>
+
+     <!--设置配置方案 -->
+    <mvc:annotation-driven />
+    <!-- 配置静态资源 -->
+    <mvc:resources location="/static/img/" mapping="/img/**" />
+    <mvc:resources location="/static/js/" mapping="/js/**" />
+    <mvc:resources location="/static/css/" mapping="/css/**" />
+    
+    
+
+</beans>
