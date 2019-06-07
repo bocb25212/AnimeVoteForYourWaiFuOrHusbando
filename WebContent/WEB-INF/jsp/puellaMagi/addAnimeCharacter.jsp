@@ -23,13 +23,13 @@
                     <form role="form" action="../AnimeCharacterController/add" id="add_Form" method="post" enctype="multipart/form-data">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="名稱" name="name" autofocus>
+                                <input style="width:300px" class="form-control" placeholder="名稱" name="name" autofocus>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-       							 圖片:<input type="file" name="file"><br>
-             					
-
-                            
+       							 圖片:<input type="file" id="Image" name="file"><br>
+             					 <img style="display:none" height="20%" width="20%" id="previewImage" src="#" />
+						
+                            <br>
                             <div class="container-fluid">
 								<div class="row">
 									<div class="col-sm-6">
@@ -45,7 +45,20 @@
                 </div>
             </div>
 <script type="text/javascript">
-   
+$("#Image").change(function(){
+	  readURL(this);
+	});
+
+function readURL(input){
+	  if(input.files && input.files[0]){
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	       $("#previewImage").attr('src', e.target.result);
+	       $("#previewImage").show();
+	    }
+	    reader.readAsDataURL(input.files[0]);
+	  }
+	}
 </script>
 </body>
 </html>

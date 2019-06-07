@@ -71,13 +71,14 @@
 			<div class="col-md-2">&nbsp;</div>
 		</div>
 	</div>
+	<%@ include file="footer.jsp"%>
 	<script>
 		$(document).ready(function() {
 			jQuery.noConflict();
 			<c:if test="${not empty notLogin}">
 			$("#login").modal();
 			</c:if>
+		});
 	</script>
-	<%@ include file="footer.jsp"%>
 </body>
 </html>

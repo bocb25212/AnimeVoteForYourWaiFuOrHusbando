@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -178,28 +179,24 @@ public class UserController {
     public ModelAndView updateAvatarDo(@RequestPart("avatar")MultipartFile avatarFile, HttpServletRequest request, HttpSession session){
         Integer uid=(Integer) session.getAttribute("userToken");
 
-        String fileName=avatarFile.getOriginalFilename();
-        String suffix=fileName.substring(fileName.lastIndexOf(".")+1, fileName.length());
-        Long date=new Date().getTime();
-        String newFileName=date+"-"+uid+"."+suffix;
-        String absolutePath=session.getServletContext().getRealPath("/static/img/avatar")+"/"+newFileName;
-        String relativePath="/img/avatar"+"/"+newFileName;
+        String filePath = "/Users/sean87/Desktop/images";
+        String originalFilename = avatarFile.getOriginalFilename();
+      //  String newFileName = UUID.randomUUID()+originalFilename;
+    //    File targetFile = new File(filePath,newFileName); 
         User newUser=new User();
-        newUser.setAvatar(relativePath);
+        newUser.setAvatar(originalFilename);
         newUser.setId(uid);
-        File file=new File(absolutePath);
-
-        if (!file.exists()){
-            try {
-                avatarFile.transferTo(file);
-                userService.updateUser(newUser);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-
-
-
+      
+        try {
+        	//avatarFile.transferTo(targetFile);
+        	  userService.updateUser(newUser);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		//} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     	User user=userService.getUserById(uid);
 

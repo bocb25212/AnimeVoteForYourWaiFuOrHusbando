@@ -9,42 +9,11 @@
 
 <body>
 <%@include file="../header.jsp"%>
-<audio controls autoplay loop>
-<source src="${contextPath}/Sispuellamagica.mp3" type="audio/mpeg">
-<p>If you can read this, your browser does not support the audio element.</p>
-</audio>
-
+<%@include file="../leftsidebar.jsp"%>
 
 
 <div class="container-fluid">
 <div class="row">
-
-<div class="col-sm-3" id="hrms_sidebar_left" role="tablist" aria-multiselectable="true">
-   <ul class="nav nav-pills nav-stacked emp_sidebar">
-        <li role="presentation" class="active">
-            <a href="#" data-toggle="collapse" data-target="#collapse_emp">
-                <span class="glyphicon glyphicon-user" aria-hidden="true">我的最愛</span>
-            </a>
-            <ul class="nav nav-pills nav-stacked" id="collapse_emp">
-                <li role="presentation"><a href="#" class="">魔法少女小圓</a></li>
-                <li role="presentation"><a href="#" role="button" class="" data-toggle="modal" data-target=""></a></li>
-                <li role="presentation"><a href="#" class="emp_clearall_btn"></a></li>
-            </ul>
-        </li>
-    </ul>
-    <ul class="nav nav-pills nav-stacked dept_sidebar">
-        <li role="presentation" class="active">
-            <a href="#"  data-toggle="collapse" data-target="#collapse_dept">
-                <span class="glyphicon glyphicon-cloud" aria-hidden="true">後台管理</span>
-            </a>
-            <ul class="nav nav-pills nav-stacked" id="collapse_dept">
-                <li role="presentation"><a href="#" class="">投票訊息</a></li>
-                <li role="presentation"><a href="#" class="" data-toggle="modal" data-target="#addAnimeCharacter">投票人物新增</a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
 <c:forEach items="${top3AnimeCharacter}" var="item">
 <div class="col-sm-3">
 <div class="panel panel-primary">
@@ -111,7 +80,6 @@
 		         });
 		    e.preventDefault(); // avoid to execute the actual submit of the form.
 		});
-	 
 </script>
 </body>
 </html>

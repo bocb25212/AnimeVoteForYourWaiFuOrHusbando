@@ -25,7 +25,14 @@
             <form  action="${contextPath}/settings/avatar/update" enctype="multipart/form-data" method="post" class="form-horizontal" role="form">
                 <div style="margin-left: 17%">
                     <img width="60px" height="60px" src="http://localhost:8080/${user.avatar}" class="img-rounded">
-                    <input type="file"  name="avatar" accept="image/png,image/jpeg,image/jpg" >
+                    <br>
+                    <input type="file"  name="avatar" id="avatar" accept="image/png,image/jpeg,image/jpg" >
+                   
+                    <br>
+                     <div style="display:none" id="avatarDiv">
+                     	 預覽頭像
+                     	<img  width="60px" height="60px"  id="previewImage" src="#"/>
+                      </div>
                     <br/>
                     <input class="btn btn-default" type="submit" value="上傳頭像">
                 </div>
@@ -43,6 +50,21 @@
 <%@ include file="../side.jsp"%>
 
 <%@ include file="../footer.jsp"%>
+<script type="text/javascript">
+$("#avatar").change(function(){
+	  readURL(this);
+	});
 
+function readURL(input){
+	  if(input.files && input.files[0]){
+	    var reader = new FileReader();
+	    reader.onload = function (e) {
+	       $("#previewImage").attr('src', e.target.result);
+	       $("#avatarDiv").show();
+	    }
+	    reader.readAsDataURL(input.files[0]);
+	  }
+	}
+</script>
 </body>
 </html>
