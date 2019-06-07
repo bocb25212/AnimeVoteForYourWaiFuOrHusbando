@@ -8,11 +8,14 @@ public class AnimeCharacterComparator implements Comparator<Animecharacter> {
 
 	@Override
 	public int compare(Animecharacter a1, Animecharacter a2) {
-		if(a1.getVotecount()>a2.getVotecount()) {
-			return -1;
-		}else {
-			return 1;
+		if (a1 != null && a2 != null) {
+			if (a1.getVotecount() > a2.getVotecount()) {
+				return -1;
+			} else {
+				return 1;
+			}
 		}
+		return 0;
 	}
 
 }

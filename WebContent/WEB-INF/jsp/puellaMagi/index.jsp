@@ -2,18 +2,13 @@
 	pageEncoding="UTF-8" import="java.util.*"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@include file="../header.jsp"%>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <c:set var="contextPath">${pageContext.request.contextPath}</c:set>
 
-
-
-
-
-<body id="returnHtml">
-
+<body>
+<%@include file="../header.jsp"%>
 <audio controls autoplay loop>
 <source src="${contextPath}/Sispuellamagica.mp3" type="audio/mpeg">
 <p>If you can read this, your browser does not support the audio element.</p>
@@ -74,7 +69,7 @@
      <img height="40%" width="80%" id="images"  src="http://localhost:8080/${item.image}">
 </c:if>
 </div>
-<form action="../puellaMagi/vote" method="post"  id="voteForm">
+<form action="../puellaMagi/vote" method="post" id="voteForm">
 <div class="panel-footer">
 <input type="hidden" name="id" value="${item.id}">
 <input type="hidden" name="name" value="${item.name}">

@@ -45,24 +45,7 @@
                 </div>
             </div>
 <script type="text/javascript">
-    $(function () {
-        $("#add_btn").click(function () {
-            $.ajax({
-                url:"/ssm/AnimeCharacterController/add",
-                type:"POST",
-                data:$("#add_Form").serialize(),
-                success:function (result) {
-                    if(result.code == 100){
-                    	alert(result.extendInfo.Success);
-                        window.location.href= "/ssm/puellaMagi/index";
-                    }else {
-                        alert(result.extendInfo.fail);
-                    }
-                }
-
-            });
-        });
-    });
+   
 </script>
 </body>
 </html>

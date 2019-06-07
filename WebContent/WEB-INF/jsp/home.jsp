@@ -28,11 +28,11 @@
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
 }
 </style>
-<%@include file="header.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>動漫資訊</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
 	<%@include file="leftsidebar.jsp"%>
 
 
@@ -71,14 +71,12 @@
 			<div class="col-md-2">&nbsp;</div>
 		</div>
 	</div>
-
 	<script>
 		$(document).ready(function() {
 			jQuery.noConflict();
 			<c:if test="${not empty notLogin}">
 			$("#login").modal();
 			</c:if>
-		});
 	</script>
 	<%@ include file="footer.jsp"%>
 </body>

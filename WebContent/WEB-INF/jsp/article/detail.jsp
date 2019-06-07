@@ -15,8 +15,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>文章</title>
 </head>
-<%@include file="../header.jsp"%>
 <body>
+<%@include file="../header.jsp"%>
 				<div class="col-sm-12">
 					<div class="thumbnail">
 						<div class="caption text-center">

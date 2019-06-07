@@ -72,16 +72,16 @@ a {
 		<div class="info">
 			<p style="text-align: center; font-size: 16px;">其他連結</p>
 			<ul>
-				<li><a href="/">Github</a></li>
-				<li><a href="/">關於作者</a></li>
-				<li><a href="/"></a></li>
+				<li><a href="https://github.com/bocb25212?tab=repositories" target="_blank">Github</a></li>
+				<li><a href="#">關於作者</a></li>
+				<li><a href="#"></a></li>
 			</ul>
 		</div>
 		<div class="info">
 			<p style="text-align: center; font-size: 16px;">其他消息</p>
 			<ul>
-				<li><a href="/">關於本站</a></li>
-				<li><a href="/">聯絡我們</a></li>
+				<li><a href="#">關於本站</a></li>
+				<li><a href="#">聯絡我們</a></li>
 			</ul>
 		</div>
 	</footer>

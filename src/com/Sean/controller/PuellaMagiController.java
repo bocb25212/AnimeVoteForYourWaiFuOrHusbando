@@ -43,12 +43,6 @@ public class PuellaMagiController {
 		return mav;
 	}
 	
-	@RequestMapping("add")
-	public ModelAndView add(){
-		ModelAndView mav = new ModelAndView();
-		return mav;
-	}
-	
 	@RequestMapping("vote")
 	public ModelAndView vote(HttpServletRequest request){
 		String id =request.getParameter("id");
