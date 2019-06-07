@@ -11,7 +11,7 @@ The website used Java Framework,Spring,SpringMVC,Mybatis
 論壇頁面
 ![image](https://github.com/bocb25212/AnimeVoteForYourWaiFuOrHusbando/blob/master/forum.png)
 發布新文章
-![image](https://github.com/bocb25212/AnimeVoteForYourWaiFuOrHusbando/blob/master/new Topic.png)
+![image](https://github.com/bocb25212/AnimeVoteForYourWaiFuOrHusbando/blob/master/new%20Topic.png)
 回覆文章
 ![image](https://github.com/bocb25212/AnimeVoteForYourWaiFuOrHusbando/blob/master/reply.png)
 
