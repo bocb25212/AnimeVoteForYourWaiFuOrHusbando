@@ -1,6 +1,6 @@
 # ForumAnime
 This is a website about voting AnimeCharacter who she or he is your best .
-Feel free to share your comments about anything related Anime.
+Feel free to share your comments about anything related Anime .
 This website is used Java Framework,Spring,SpringMVC,Mybatis to develope
 
 首頁
