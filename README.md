@@ -1,6 +1,7 @@
-# AnimeVoteForYourWaiFuOrHusbando
-This is a website about voting AnimeCharacter who she or he is your best . 
-The website used Java Framework,Spring,SpringMVC,Mybatis
+# ForumAnime
+This is a website about voting AnimeCharacter who she or he is your best .
+Feel free to share your comments about anything related Anime.
+This website is used Java Framework,Spring,SpringMVC,Mybatis to develope
 
 首頁
 ![image](https://github.com/bocb25212/AnimeVoteForYourWaiFuOrHusbando/blob/master/index.png)
